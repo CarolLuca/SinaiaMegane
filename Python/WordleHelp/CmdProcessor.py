@@ -29,7 +29,7 @@ class CmdProcessor:
         if not os.path.isfile(filePath):
             raise Exception(f"File {filePath} cannot be located!")
         
-        lines = open(filePath)
+        lines = open(filePath, errors = "ignore")
         for line in lines:
             pair = re.split("\t", line)
             key = str(pair[0])
